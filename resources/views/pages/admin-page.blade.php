@@ -142,24 +142,19 @@
         </div>
     </section>
     <hr class="m-0" />
-    
-    <!-- Testimonials -->
+        
+    {{-- <!-- Testimonials -->
     <section class="resume-section" id="testimonials">
         <div class="resume-section-content">
             <h2 class="mb-5">List of Testimonials</h2>
             <table class="table table-striped">
-                {{-- $table->string('name');
-                $table->string('position');
-                $table->string('photo');
-                $table->text('testimonial'); --}}
                 <thead class="thead-dark">
                   <tr style="text-align: center">
                     <th scope="col">id</th>
                     <th scope="col">Name</th>
                     <th scope="col">Position</th>
                     <th scope="col">Photo</th>
-                    <th scope="col">Testimonial</th>                    
-                    {{-- <th scope="col">Edit</th> --}}
+                    <th scope="col">Testimonial</th>
                     <th scope="col">Delete</th>
                   </tr>
                 </thead>
@@ -171,11 +166,6 @@
                       <td>{{ $testimonial->position }}</td>
                       <td><img src="{{ asset("img/testimonials/$testimonial->photo") }}" alt="" width="100px" height="100px"></td>                      
                       <td>{{ $testimonial->testimonial }}</td>
-                        {{-- <td>
-                            <button type="button" class="btn btn-primary">
-                            <a href="{{ route('show_testimonial', ['id' => $testimonial->id]) }}"><span style="color: white">Edit</span></a>
-                            </button>
-                        </td> --}}
                         <td>
                             <button type="button" class="btn btn-danger">
                               <a href="{{ route('delete_testimonial', ['id' => $testimonial->id]) }}" onclick="event.preventDefault();
@@ -191,7 +181,7 @@
                 </tbody>
               </table>            
         </div>
-    </section>
+    </section>     --}}
     <hr class="m-0" />    
 </div>
 @endsection

@@ -17,6 +17,7 @@ class BookingList extends Migration
             $table->id();
             $table->integer('id_user');
             $table->integer('id_hotel');
+            $table->string('status_bayar')->default('No');
             $table->timestamps();
         });
     }

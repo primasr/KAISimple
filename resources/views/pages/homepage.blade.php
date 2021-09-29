@@ -1,6 +1,6 @@
   @extends('layouts.main')
 
-  @section('title', 'DTStay')
+  @section('title', 'KAISimple')
 
   @section('content')
   <!-- ======= Hero Section ======= -->
@@ -9,15 +9,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1>DTStay</h1>
-          <h2>Do you want to stay? Then you have to pay</h2>
+          <h1>KAISimple</h1>
+          <h2>Simple form of KAI Access</h2>
           <div class="d-flex">
             <a href="#about" class="btn-get-started scrollto">Get Started</a>
             {{-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox btn-watch-video" data-vbtype="video" data-autoplay="true"> Watch Video <i class="icofont-play-alt-2"></i></a> --}}
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img">
-          <img src="{{ asset('sheesh/assets/img/hotel-3.png') }}" class="img-fluid animated" alt="">
+          <img src="{{ asset('sheesh/assets/img/kai.jpg') }}" class="img-fluid animated" alt="">          
         </div>
       </div>
     </div>
@@ -66,9 +66,9 @@
             <img src="{{ asset('sheesh/assets/img/about.png') }}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <h3>Let's get closer with "DTStay"</h3>
+            <h3>Let's get closer with "KAISimple"</h3>
             <p class="font-italic">
-              DTStay is a hotel booking application that provides many profitable services
+              KAISimple is a train ticket booking application that provides many profitable services
             </p>
             <ul>
               <li><i class="icofont-check-circled"></i> Affordable Prices</li>
@@ -76,7 +76,7 @@
               <li><i class="icofont-check-circled"></i> Easy Process</li>
             </ul>
             <p>
-              Come on, know more about DTStay so that you are closer to the dream of relaxing!
+              Come on, know more about KAISimple so that you are closer to the dream of journey!
             </p>
           </div>
         </div>
@@ -91,13 +91,13 @@
         <div class="row counters">
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">6969</span>
+            <span data-toggle="counter-up">696,969</span>
             <p>Customers</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
-            <span data-toggle="counter-up">696</span>
-            <p>Hotel Partners</p>
+            <span data-toggle="counter-up">69</span>
+            <p>Business Partners</p>
           </div>
 
           <div class="col-lg-3 col-6 text-center">
@@ -122,7 +122,7 @@
         <div class="section-title">
           <span>Services</span>
           <h2>Services</h2>
-          <p>Services provided on DTStay</p>
+          <p>Services provided on KAISimple</p>
         </div>
 
         <div class="row">
@@ -138,7 +138,7 @@
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4><a href="">Very Trustworthy</a></h4>
-              <p>So many (6969) satisfied customers with our services</p>
+              <p>So many (696,969) satisfied customers with our services</p>
             </div>
           </div>
 
@@ -160,19 +160,18 @@
       <div class="container">
 
         <div class="section-title">
-          <span>List of Hotels</span>
-          <h2>List of Hotels</h2>
-          <p>Choose your favorite place here</p>
+          <span>List of Trains</span>
+          <h2>List of Trains</h2>
+          <p>Choose your favorite trip here</p>
         </div>
 
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-apartment">Apartment</li>
-              <li data-filter=".filter-resort">Resort</li>
-              <li data-filter=".filter-hotel">Hotel</li>
-              <li data-filter=".filter-villa">Villa</li>
+              <li data-filter=".filter-executive">Executive</li>
+              <li data-filter=".filter-business">Business</li>
+              <li data-filter=".filter-economy">Economy</li>
             </ul>
           </div>
         </div>
@@ -189,7 +188,7 @@
             <img src="{{ asset("img/hotels/$first_hotel_image") }}" class="img-fluid" alt="{{ $hotel->name }}">
             <div class="portfolio-info">
               <h4>{{ $hotel->name }}</h4>
-              <p>Rooms: {{ $hotel->rooms }}</p>
+              <p>Rp {{ number_format($hotel->price, 2) }}</p>
               <a href="{{ asset("img/hotels/$first_hotel_image") }}" data-gall="portfolioGallery" class="venobox preview-link" title="{{ $hotel->category }} {{ $hotel->id }}"><i class="bx bx-plus"></i></a>
               <a href="{{ route('show_hotels', ['id' => $hotel->id]) }}" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
             </div>
@@ -203,7 +202,7 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    <!-- ======= Testimonials Section ======= -->
+    {{-- <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
       <div class="container">
 
@@ -236,7 +235,7 @@
         </div>
 
       </div>
-    </section><!-- End Testimonials Section -->        
+    </section><!-- End Testimonials Section -->         --}}
 
   </main><!-- End #main -->
   @endsection

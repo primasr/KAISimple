@@ -15,11 +15,8 @@ class Hotel extends Model
         'name',
         'price',
         'images',
-        'rating',
-        'address',
-        'coordinate',
-        'facilities',
-        'rooms',
+        'stasiun_awal',
+        'stasiun_akhir',
         'category',
     ];
 }

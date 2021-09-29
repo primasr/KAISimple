@@ -33,6 +33,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('booking_history/{id}', [DTSController::class, 'booking_history'])->name('booking_history');    
             Route::post('booking', [DTSController::class, 'booking'])->name('booking');
             Route::post('remove_booking/{id}', [DTSController::class, 'remove_booking'])->name('remove_booking');
+            Route::post('bayar_kereta/{id}/{money}', [DTSController::class, 'bayar_kereta'])->name('bayar_kereta');
         });
     // });
     

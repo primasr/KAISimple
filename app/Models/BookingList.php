@@ -14,5 +14,6 @@ class BookingList extends Model
     protected $fillable = [
         'id_user',
         'id_hotel',
+        'status_bayar',
     ];
 }

@@ -22,19 +22,46 @@
           </div>
 
           <div class="portfolio-info">
-            <h3>Hotel Info</h3>
-            <ul>
+            <h3>Train Info</h3>
+            @php
+              $hasil_rupiah = "Rp " . number_format($hotel->price,2,',','.');
+            @endphp
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th>Train Name</th>
+                  <td>{{ $hotel->name }}</td>
+                </tr>
+                <tr>
+                  <th>Price</th>
+                  <td>{{ $hasil_rupiah }}</td>
+                </tr>
+                <tr>
+                  <th>Origin Station</th>
+                  <td>{{ $hotel->stasiun_awal }}</td>
+                </tr>
+                <tr>
+                  <th>End Station</th>
+                  <td>{{ $hotel->stasiun_akhir }}</td>
+                </tr>
+                <tr>
+                  <th>Category</th>
+                  <td>{{ $hotel->category }}</td>
+                </tr>
+              </tbody>
+            </table>
+            {{-- <ul>
               <li><strong>Name</strong>: {{ $hotel->name }}</li>
-              <li><strong>Rating</strong>: {{ $hotel->rating }} / 100</li>
               @php
                   $hasil_rupiah = "Rp " . number_format($hotel->price,2,',','.');
               @endphp
               <li><strong>Price</strong>: {{ $hasil_rupiah }}</li>
-              {{-- <li><strong>Address</strong>: {{ $hotel->address }}</li> --}}
-              <li><strong>Rooms</strong>: {{ $hotel->rooms }}</li>
+              <li><strong>Address</strong>: {{ $hotel->address }}</li>
+              <li><strong>Origin Station</strong>: {{ $hotel->stasiun_awal }}</li>
+              <li><strong>End Station</strong>: {{ $hotel->stasiun_akhir }}</li>
               <li><strong>Category</strong>: {{ $hotel->category }}</li>
-              {{-- <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li> --}}              
-            </ul>
+              <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>              
+            </ul> --}}
 
             <!-- ======= Cta Section ======= -->
             <section id="cta" class="cta" style="padding: 40px 0px">
@@ -61,7 +88,7 @@
           </div>
 
         </div>
-
+{{-- 
 
         <div class="portfolio-description" style="padding-top: 100px">
           <h2>Facilites</h2>
@@ -87,7 +114,7 @@
             <div class="row justify-content-center">                
                 <iframe src="{{ $hotel->coordinate }}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-        </div>
+        </div> --}}
         
       </div>
     </section><!-- End Portfolio Details Section -->

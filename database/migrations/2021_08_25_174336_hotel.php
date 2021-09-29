@@ -15,14 +15,11 @@ class Hotel extends Migration
     {
         Schema::create('hotels', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('price');
+            $table->string('name');            
+            $table->double('price');
             $table->string('images');
-            $table->float('rating');
-            $table->string('address');
-            $table->text('coordinate');
-            $table->string('facilities');
-            $table->integer('rooms');
+            $table->string('stasiun_awal');
+            $table->string('stasiun_akhir');
             $table->string('category');
             $table->timestamps();
         });

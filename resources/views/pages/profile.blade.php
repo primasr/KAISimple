@@ -10,7 +10,7 @@
                 <div class="card-header">Profile</div>
 
                 <div class="card-body" style="margin-left: 180px">
-                    <img src="{{ asset("img/users/$profile->photo") }}" alt="Card image cap" width="150px" height="150px">     
+                    <img src="{{ asset("img/users/$profile->photo") }}" alt="Please upload your Image" width="150px" height="150px">     
                 </div >               
                 <div class="card-body" style="margin-left: 180px">                  
                     <form method="POST" action="{{ route('edit_profile', ['id' => $profile->id]) }}" enctype="multipart/form-data">
@@ -18,11 +18,11 @@
                         
                         <div class="form-group my-form w-75">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="{{ $profile->name }}">
+                            <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" value="{{ $profile->name }}">
                         </div>
                         <div class="form-group my-form w-75">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="{{ $profile->email }}">
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="{{ $profile->email }}">
                         </div>                
                         <div class="form-group my-form w-75">
                             <label for="photo">Photo</label>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="form-group my-form w-75">
                             <label for="phone">Phone</label>
-                            <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp" placeholder="{{ $profile->phone }}">
+                            <input type="text" class="form-control" id="phone" name="phone" aria-describedby="emailHelp" value="{{ $profile->phone }}">
                         </div>                                                    
                                 
                         <br><br>                                                                                           

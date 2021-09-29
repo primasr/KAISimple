@@ -13,7 +13,7 @@
         @if (Route::currentRouteName() == "homepage")                    
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">List of Hotels</a></li>            
+          <li><a href="#portfolio">List of Trains</a></li>            
         @endif
 
           @guest
