@@ -233,7 +233,6 @@ class DTSController extends Controller
 
         $client = new Client();        
         $url = "https://simple-e-wallet.herokuapp.com/api/getuserbyemail/$email";
-        // $url = "https://simple-e-wallet.herokuapp.com/api/getuserbyemail/inirizki@gmail.com";
 
 
         try {
@@ -242,34 +241,7 @@ class DTSController extends Controller
 
             $responseTemp = json_decode($response->getBody());          
             
-            // $response = Http::get($url);
-            // $responseTemp = json_decode($response->getBody());
-            
         } catch (\Exception $e){
-            $message = $e->getMessage();                 
-            // $findme = "resulted in a";    
-            // $pos = strpos($message,$findme);
-            // $error_message = substr($message,$pos);
-            // $error_message_2 = substr($message,0,7);
-            // $array_of_error = array("400","401","403","404","419","422","429","500","503");
-            // $i = 0;                
-
-            // foreach($array_of_error as $error)
-            // {
-            //     if (strpos($error_message, $array_of_error[$i]) !== false)
-            //     {
-            //         $error_page = $array_of_error[$i];
-            //         return view('myerrors.'.$error_page.'', compact('username','repo_name'));                     
-            //     }
-            //     $i++;
-            // } 
-            
-            // if ($error_message_2 == "Maximum")
-            // {
-            //     return view('myerrors.limit_access');
-            // }
-
-            // return view('myerrors.email_not_found', compact('email', 'url', 'message'));
             return view('myerrors.email_not_found');
 
         }
@@ -308,25 +280,27 @@ class DTSController extends Controller
     public function bayar_kereta($id, $money){
         $client = new Client();     
         $email = Auth::user()->email;   
-        $url = "https://simple-e-wallet.herokuapp.com/api/transaction/$email";        
+        $url = "https://simple-e-wallet.herokuapp.com/api/transaction/$email";
 
         try {
                 
             $response = $client->request('PUT', $url, [
-                'money' => $money,
-                'status' => 'kurang',
-                'description' => 'Bayar Kereta',
+                'form_params' => [                    
+                    'money' => $money,
+                    'status' => 'kurang',
+                    'description' => 'Bayar Kereta',
+                ]
             ]);
 
-            $responseTemp = json_decode($response->getBody());                  
+            // $responseTemp = json_decode($response->getBody());    
+            // return view('myerrors.uangmu_kurang', compact('responseTemp'));
             
         } catch (\Exception $e){            
             return view('myerrors.uangmu_kurang');
         }
 
-        $hotel = Hotel::find($id);
-        $hotel->status_bayar = "Yes";
-        $hotel->save();
+        $booking_list = DB::table('booking_list')->where('id_user', $id);
+        $booking_list->delete();
 
         return redirect()->route('booking_history', ['id' => Auth::user()->id]);
     }

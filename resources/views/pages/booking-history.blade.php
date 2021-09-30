@@ -23,7 +23,6 @@
                             <th scope="col">Origin Station</th>
                             <th scope="col">End Station</th>
                             <th scope="col">Category</th>
-                            <th scope="col">Payment Status</th>
                             <th scope="col">Remove</th>                            
                           </tr>
                         </thead>
@@ -52,14 +51,7 @@
                               <td><img src="{{ asset("img/hotels/$first_hotel_image") }}" alt="" width="100px" height="100px"></td>
                               <td>{{ $hotel->stasiun_awal }}</td>
                               <td>{{ $hotel->stasiun_akhir }}</td>                              
-                              <td>{{ $hotel->category }}</td>                                   
-                              <td>
-                                @if ($hotel->status_bayar == "Yes")
-                                  <span style="color: green">{{ $hotel->status_bayar }}</span>    
-                                @else
-                                  <span style="color: red">{{ $hotel->status_bayar }}</span> 
-                                @endif                                 
-                              </td>
+                              <td>{{ $hotel->category }}</td>
                               <td>
                                 <button type="button" class="btn btn-danger">
                                   <a href="{{ route('remove_booking', ['id' => $booking_list_id[$j]]) }}" onclick="event.preventDefault();

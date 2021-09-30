@@ -2,6 +2,8 @@
 
 @section('title', 'Email not Found')
 
+@dd($responseTemp)
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
